@@ -1,0 +1,454 @@
+0x001 (   1)  handler 0x50c920  
+0x002 (   2)  handler 0x4efd30  
+0x003 (   3)  handler 0x50c960  
+0x004 (   4)  handler 0x4efd30  
+0x008 (   8)  handler 0x50c990  Lsystem | Lcset
+0x009 (   9)  handler 0x4f8310  GlobalText
+0x016 (  22)  handler 0x4ed8a0  
+0x017 (  23)  handler 0x4eef80  ServerSelectHandleUI | GlobalText
+0x019 (  25)  handler 0x4edd60  
+0x01a (  26)  handler 0x4ede80  
+0x01c (  28)  handler 0x4edc40  XiGameCharData::Get(). No dynamic control. | AuctionMinLevel | 11828 | 10995 | 10066 | 11101
+0x01e (  30)  handler 0x503e50  
+0x020 (  32)  handler 0x503ee0  
+0x02a (  42)  handler 0x505cd0  
+0x02c (  44)  handler 0x4f9a00  
+0x02f (  47)  handler 0x505f50  
+0x032 (  50)  handler 0x5063a0  
+0x03d (  61)  handler 0x506e20  10988 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0x041 (  65)  handler 0x506a30  image req count(
+0x044 (  68)  handler 0x5069c0  
+0x046 (  70)  handler 0x505ec0  
+0x048 (  72)  handler 0x505e20  10627 | GlobalText
+0x04a (  74)  handler 0x505e70  Lclient sticker %d | Ladmin | %seffects\realmatch\real_%05d.dds
+0x04f (  79)  handler 0x505f80  
+0x051 (  81)  handler 0x505d10  ServerSelectHandleUI | GlobalText | 10605
+0x053 (  83)  handler 0x505d60  ApprenticeFlowType | XiGameCharData::Get(). No dynamic control. | GlobalContent
+0x054 (  84)  handler 0x506d60  
+0x056 (  86)  handler 0x4ef1a0  10033 | GlobalText | XiGameCharData::Get(). No dynamic control.
+0x058 (  88)  handler 0x4ef370  XiGameCharData::Get(). No dynamic control.
+0x05a (  90)  handler 0x4f14d0  XiGameCharData::Get(). No dynamic control.
+0x05c (  92)  handler 0x4f1550  10501 | XiGameCharData::Get(). No dynamic control.
+0x05e (  94)  handler 0x505ed0  
+0x060 (  96)  handler 0x505f00  10654 | GlobalText
+0x061 (  97)  handler 0x506480  
+0x062 (  98)  handler 0x4fcd60  XiGameCharData::Get(). No dynamic control.
+0x063 (  99)  handler 0x4f1420  XiGameCharData::Get(). No dynamic control.
+0x065 ( 101)  handler 0x505e10  
+0x069 ( 105)  handler 0x4f17a0  XiGameCharData::Get(). No dynamic control.
+0x06b ( 107)  handler 0x4fc430  10605 | GlobalText
+0x06d ( 109)  handler 0x502850  10968 | 10969
+0x06f ( 111)  handler 0x50a590  
+0x073 ( 115)  handler 0x509ba0  
+0x075 ( 117)  handler 0x509d40  
+0x079 ( 121)  handler 0x4f13d0  10013 | GlobalText
+0x07c ( 124)  handler 0x5057a0  ApprenticeFlowType
+0x07e ( 126)  handler 0x4f1c30  10034 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0x080 ( 128)  handler 0x4ef580  Player :  | Name :  | <LeaveChannelPkt> 
+0x082 ( 130)  handler 0x4ef680  
+0x084 ( 132)  handler 0x5008b0  
+0x088 ( 136)  handler 0x4f7090  XiGameCharData::Get(). No dynamic control.
+0x089 ( 137)  handler 0x4fb280  11303 | 10993 | 11071 | 11070 | 11154 | 11155
+0x08a ( 138)  handler 0x500c10  XiGameCharData::Get(). No dynamic control.
+0x08b ( 139)  handler 0x4f71e0  
+0x08c ( 140)  handler 0x4ef720  Name:  | <OpenChatPkt> 
+0x08d ( 141)  handler 0x4ef7e0  Name:  | <CloseChatPkt> 
+0x08f ( 143)  handler 0x4f1ee0  11166 | 11169
+0x091 ( 145)  handler 0x4f2000  11167 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0x093 ( 147)  handler 0x502930  Lroom | Larea | Lchannel | Lteam | Lparty | Lserver
+0x094 ( 148)  handler 0x4ef9d0  Lwhisper
+0x096 ( 150)  handler 0x4f2420  
+0x097 ( 151)  handler 0x4f74d0  
+0x099 ( 153)  handler 0x4f74f0  10042 | GlobalText
+0x09a ( 154)  handler 0x4fc1d0  10044 | GlobalText
+0x09c ( 156)  handler 0x4fc330  
+0x09e ( 158)  handler 0x4f7690  10754 | %s%%%s | GlobalText
+0x0a1 ( 161)  handler 0x4ef550  
+0x0a3 ( 163)  handler 0x4f99b0  
+0x0aa ( 170)  handler 0x4f75a0  
+0x0b5 ( 181)  handler 0x4f2500  
+0x0b8 ( 184)  handler 0x4f9da0  
+0x0b9 ( 185)  handler 0x4f9b50  
+0x0ba ( 186)  handler 0x500d90  NewInstant | chase propose (
+0x0bb ( 187)  handler 0x4f27a0  ) by  | 's huv( | Remote Hit  |  by  | Unknown Hit 
+0x0bc ( 188)  handler 0x505200  ) at  | new( | Chase Switch: old( | Chase Switch Error 1 (nCar= | Chase Switch Error 2 (nCar= | Chase Switch Error 3 (nCar=
+0x0bf ( 191)  handler 0x4f2c00  
+0x0c0 ( 192)  handler 0x5012a0  HuvHit ( | 10757 | LHuv Exp %d | LHuv Mito %d
+0x0c1 ( 193)  handler 0x4f2e40  HuvResult (
+0x0c3 ( 195)  handler 0x4f2a20  UC_HUVAgain3 | UC_HUVAgain2 | UC_HUVAgain |  sec |  min  | boss time : 
+0x0c4 ( 196)  handler 0x4f2990  boss time bonus:  | UC_TimeSave
+0x0c5 ( 197)  handler 0x4f2ec0  HuvHealth (
+0x0c9 ( 201)  handler 0x4f2fc0  
+0x0de ( 222)  handler 0x4faf20  11181
+0x0e0 ( 224)  handler 0x4f65b0  
+0x0e1 ( 225)  handler 0x4f6630  
+0x0e3 ( 227)  handler 0x4f6330  11274 | 11181
+0x0e5 ( 229)  handler 0x4fa280  10748 | GlobalText
+0x0e7 ( 231)  handler 0x4fad80  11181
+0x0ea ( 234)  handler 0x4f62b0  
+0x0ed ( 237)  handler 0x4f6400  10832 | GlobalText
+0x0ee ( 238)  handler 0x4f6600  10569 | %s%s
+0x0ef ( 239)  handler 0x4fb0b0  10810 | %s%s | 10811
+0x0f0 ( 240)  handler 0x4fa3a0  10412 | XiGameCharData::Get(). No dynamic control.
+0x0f1 ( 241)  handler 0x4f3070  
+0x0f2 ( 242)  handler 0x5046f0  10826
+0x0f3 ( 243)  handler 0x5047d0  10825
+0x0f4 ( 244)  handler 0x501570  10827 | 10828 | 10831
+0x0f5 ( 245)  handler 0x501950  10829 | 10830 | 10831
+0x0f6 ( 246)  handler 0x4f3040  
+0x0f7 ( 247)  handler 0x5046f0  10826
+0x0f8 ( 248)  handler 0x501c90  PartyBonus_level | 10998 | 10996 | 10997
+0x0fb ( 251)  handler 0x50e090  
+0x0fc ( 252)  handler 0x50e1d0  11146
+0x0fd ( 253)  handler 0x50e0f0  
+0x0fe ( 254)  handler 0x50e320  10943 | GlobalText | 10940 | 10941
+0x0ff ( 255)  handler 0x50e130  Main | Cras | MoonPalace | Koinonia | Oros | XiGameCharData::Get(). No dynamic control.
+0x100 ( 256)  handler 0x50e1a0  LUndercity bosshuv success | LUndercity bosshuv fail
+0x105 ( 261)  handler 0x4f33b0  XiGameCharData::Get(). No dynamic control.
+0x107 ( 263)  handler 0x4f35c0  rq_00057 | post_5th_00042 | post_5th_00043
+0x109 ( 265)  handler 0x4feae0  
+0x10b ( 267)  handler 0x4f3730  rq_00057
+0x10d ( 269)  handler 0x4f3960  
+0x10f ( 271)  handler 0x4f3a10  
+0x111 ( 273)  handler 0x4fa640  11331 | 11341 | 11343
+0x113 ( 275)  handler 0x4fafe0  11412 | GlobalText
+0x119 ( 281)  handler 0x4f30a0  VC_Enter | GlobalText
+0x11b ( 283)  handler 0x4f3110  10942 | GlobalText
+0x11c ( 284)  handler 0x4fa510  11145 | GlobalText
+0x11f ( 287)  handler 0x4f3270  10943 | GlobalText
+0x122 ( 290)  handler 0x504910  ChasingBattleStart : | VC_HUV_PVP | VC_HUVNow | VC_HUVNext
+0x124 ( 292)  handler 0x4fe260  
+0x126 ( 294)  handler 0x4efd30  
+0x127 ( 295)  handler 0x4fe760  10975 | 10971
+0x128 ( 296)  handler 0x503380  VC_Cancel_Msg | 10973 | 10974 | LVirtual Chasing Exp %d | LVirtual Chasing Mito %d | ChasingBattle Distance %d m
+0x129 ( 297)  handler 0x4fe580  
+0x12b ( 299)  handler 0x4f3340  11003 | GlobalText
+0x12d ( 301)  handler 0x4f1e00  JoinArea Ack 
+0x130 ( 304)  handler 0x4f1e70  
+0x142 ( 322)  handler 0x4fa690  
+0x144 ( 324)  handler 0x4f4800  10655 | 10038
+0x146 ( 326)  handler 0x4f4990  XiGameCharData::Get(). No dynamic control. | 10053
+0x147 ( 327)  handler 0x4f4b50  10137
+0x14a ( 330)  handler 0x4f4ba0  10124
+0x14c ( 332)  handler 0x4f4c00  10126
+0x150 ( 336)  handler 0x4f4ce0  game/ | .nif | 10656 | 10657 | 10130 | 10131
+0x151 ( 337)  handler 0x4f4d50  
+0x154 ( 340)  handler 0x4fa6e0  %u:%02u:%02u
+0x168 ( 360)  handler 0x4f4d80  10054
+0x169 ( 361)  handler 0x4f4e00  XiGameCharData::Get(). No dynamic control.
+0x17c ( 380)  handler 0x4fa5e0  11331 | 11341 | 11343
+0x17e ( 382)  handler 0x4f33d0  10122 | mq_5th_003 | post_5th_00042 | post_5th_00043
+0x180 ( 384)  handler 0x4f3520  10123 | GlobalText
+0x182 ( 386)  handler 0x4efa10  11331 | 11341 | 11343
+0x18d ( 397)  handler 0x4efd10  
+0x18f ( 399)  handler 0x4efc90  11432 | GlobalText
+0x191 ( 401)  handler 0x4fa720  
+0x192 ( 402)  handler 0x4fa760  10039
+0x194 ( 404)  handler 0x4f4ea0  %s%%%s
+0x196 ( 406)  handler 0x4efba0  XiGameCharData::Get(). No dynamic control.
+0x198 ( 408)  handler 0x4f4ee0  XiGameCharData::Get(). No dynamic control.
+0x19a ( 410)  handler 0x4f4f60  10100
+0x19c ( 412)  handler 0x4f4f90  10101
+0x19e ( 414)  handler 0x4f4ff0  XiGameCharData::Get(). No dynamic control. | 10102 | 10103 | 10104
+0x1a0 ( 416)  handler 0x4efc40  
+0x1a2 ( 418)  handler 0x4f5160  i_n_00055 | i_n_00056 | i_n_00058 | i_n_00059 | i_n_00060 | i_n_00099
+0x1a4 ( 420)  handler 0x4efc50  
+0x1a5 ( 421)  handler 0x4fa8b0  
+0x1a7 ( 423)  handler 0x4efc40  
+0x1a9 ( 425)  handler 0x4efd30  
+0x1ab ( 427)  handler 0x4f53a0  11414 | OptionCraft_Guarantee | 11700
+0x1ad ( 429)  handler 0x4f5580  
+0x1af ( 431)  handler 0x4f50d0  XiGameCharData::Get(). No dynamic control.
+0x1b1 ( 433)  handler 0x4efd40  
+0x1b4 ( 436)  handler 0x4f5060  XiGameCharData::Get(). No dynamic control. | 10882
+0x1b7 ( 439)  handler 0x4efd40  
+0x1b9 ( 441)  handler 0x507380  MinBattle2XGrade | MaxBattle2XGrade | MaxBattle2XLevel | MinBattle3XGrade | MaxBattle3XGrade | MaxBattle3XLevel
+0x1be ( 446)  handler 0x50a170  10027 | 10028
+0x1bf ( 447)  handler 0x50b140  OBSState  | 10030 | 10032 | 10031
+0x1c3 ( 451)  handler 0x509af0  
+0x1c5 ( 453)  handler 0x508280  
+0x1c7 ( 455)  handler 0x5085c0  
+0x1c8 ( 456)  handler 0x508c00  10840 | 10841 | 10842 | 10843 | 10844
+0x1ca ( 458)  handler 0x508f20  
+0x1cb ( 459)  handler 0x507a30  10244
+0x1cd ( 461)  handler 0x507930  
+0x1d0 ( 464)  handler 0x508f80  
+0x1d1 ( 465)  handler 0x509260  10026 | GlobalText
+0x1d2 ( 466)  handler 0x509360  10026 | GlobalText
+0x1d3 ( 467)  handler 0x507990  
+0x1d4 ( 468)  handler 0x509460  
+0x1d5 ( 469)  handler 0x507a90  
+0x1d6 ( 470)  handler 0x507ae0  10029 | GlobalText
+0x1da ( 474)  handler 0x5095d0  20289 | 20210 | Lroom
+0x1e2 ( 482)  handler 0x507db0  
+0x1e4 ( 484)  handler 0x509a40  %d %d %d %d %d | 11197
+0x1e5 ( 485)  handler 0x507e10  
+0x1e7 ( 487)  handler 0x507e80  
+0x1e8 ( 488)  handler 0x507ed0  
+0x1ea ( 490)  handler 0x509fe0  [%s] %s
+0x1eb ( 491)  handler 0x508080  
+0x1ec ( 492)  handler 0x50a040  
+0x1ee ( 494)  handler 0x507f00  
+0x1ef ( 495)  handler 0x5080e0  
+0x1f0 ( 496)  handler 0x508050  
+0x1f1 ( 497)  handler 0x508130  XiGameCharData::Get(). No dynamic control.
+0x1f2 ( 498)  handler 0x5081f0  
+0x1f3 ( 499)  handler 0x509810  11083 | 11084 | 11085 | 11086
+0x1f5 ( 501)  handler 0x4fcf10  XiGameCharData::Get(). No dynamic control. | [%s] %s
+0x1f6 ( 502)  handler 0x4fd160  10726
+0x1f9 ( 505)  handler 0x4f55d0  XiGameCharData::Get(). No dynamic control.
+0x1fb ( 507)  handler 0x4f5630  XiGameCharData::Get(). No dynamic control.
+0x1fd ( 509)  handler 0x4f5680  XiGameCharData::Get(). No dynamic control.
+0x1ff ( 511)  handler 0x4fcfe0  [%s] %s
+0x201 ( 513)  handler 0x4fd2c0  XiGameCharData::Get(). No dynamic control. | [%s] %s
+0x203 ( 515)  handler 0x4f56d0  XiGameCharData::Get(). No dynamic control.
+0x20a ( 522)  handler 0x4f2fd0  
+0x213 ( 531)  handler 0x509ec0  
+0x215 ( 533)  handler 0x5083a0  
+0x217 ( 535)  handler 0x5083c0  
+0x21b ( 539)  handler 0x4ec480  
+0x21c ( 540)  handler 0x50c960  
+0x21d ( 541)  handler 0x4ec010  Self Msg Error: MoveVehicle:
+0x21e ( 542)  handler 0x4ec1e0  
+0x21f ( 543)  handler 0x4ed6c0  
+0x220 ( 544)  handler 0x4ec330  
+0x221 ( 545)  handler 0x4ebf30  Self Msg Error: MoveVehicleExt:
+0x222 ( 546)  handler 0x4eb560  
+0x223 ( 547)  handler 0x4ec2c0  
+0x224 ( 548)  handler 0x4ebe50  Self Msg Error: MoveVehicleSimpl:
+0x225 ( 549)  handler 0x4ec100  Self Msg Error: JumpVehicle:
+0x226 ( 550)  handler 0x4eb490  Self Msg Error: RemoveVehicle:
+0x228 ( 552)  handler 0x4ecf50  
+0x233 ( 563)  handler 0x4eb1a0  10609 | 10610 | 10611 | 10612 | 10613 | 11394
+0x23b ( 571)  handler 0x4ec720  Lroom | Larea | Lchannel | Lteam | Lparty | Lserver
+0x23c ( 572)  handler 0x4ed280  
+0x23e ( 574)  handler 0x4ece70  Self Msg Error: MoveVehicle
+0x241 ( 577)  handler 0x50c500  Rush Switch Error 1 (nCar( | Rush Switch Error 2 (nCar= | Rush Switch Error 3 (nCar=
+0x242 ( 578)  handler 0x4eb880  
+0x245 ( 581)  handler 0x4fa9d0  
+0x247 ( 583)  handler 0x4f5740  10117 | XiGameCharData::Get(). No dynamic control.
+0x249 ( 585)  handler 0x4f57c0  10118
+0x24b ( 587)  handler 0x4f58a0  XiGameCharData::Get(). No dynamic control.
+0x24d ( 589)  handler 0x4faa00  
+0x251 ( 593)  handler 0x4f57f0  XiGameCharData::Get(). No dynamic control.
+0x252 ( 594)  handler 0x4f5860  
+0x254 ( 596)  handler 0x4faa00  
+0x26d ( 621)  handler 0x507950  
+0x26e ( 622)  handler 0x507d70  
+0x271 ( 625)  handler 0x509550  
+0x280 ( 640)  handler 0x4f5900  
+0x295 ( 661)  handler 0x4f59a0  XiGameCharData::Get(). No dynamic control.
+0x297 ( 663)  handler 0x4f5bc0  ***,***,*** | 10159 | 10160 | 10161 | 11055 | 10729
+0x299 ( 665)  handler 0x4f9140  
+0x29b ( 667)  handler 0x4f1880  (null) | Total %d licenses
+0x29c ( 668)  handler 0x4f1b10  (null)
+0x2ab ( 683)  handler 0x4ec560  SelectServer_PlayerCapacity | 10762 | 10763 | 10764
+0x2ad ( 685)  handler 0x4eb5e0  ------area status------ | base:  | th:  | pvp area:  | pvp user:  | total count: 
+0x2ae ( 686)  handler 0x4eb0f0  
+0x2bd ( 701)  handler 0x4ec250  
+0x2c2 ( 706)  handler 0x4ec3a0  
+0x2c8 ( 712)  handler 0x4ec8e0  
+0x2d0 ( 720)  handler 0x4ec410  
+0x2d4 ( 724)  handler 0x4ff020  L1L / %u Mito
+0x2d5 ( 725)  handler 0x4ec4f0  
+0x2e5 ( 741)  handler 0x4f5ca0  10039 | 10040
+0x2f8 ( 760)  handler 0x4efd60  
+0x2f9 ( 761)  handler 0x4efd80  
+0x2fa ( 762)  handler 0x4efda0  XiGameCharData::Get(). No dynamic control.
+0x30d ( 781)  handler 0x504ef0  
+0x30f ( 783)  handler 0x4f5e80  ApprenticeFlowType | MoonPalace | Koinonia | Cras | Oros | Taipei
+0x311 ( 785)  handler 0x4f61a0  
+0x313 ( 787)  handler 0x4f60f0  
+0x315 ( 789)  handler 0x504f40  
+0x316 ( 790)  handler 0x4faa50  
+0x317 ( 791)  handler 0x4f1dd0  
+0x318 ( 792)  handler 0x4f1db0  
+0x321 ( 801)  handler 0x503ff0  
+0x322 ( 802)  handler 0x4f9a90  
+0x323 ( 803)  handler 0x4eb080  
+0x324 ( 804)  handler 0x504330  ApplySticker
+0x326 ( 806)  handler 0x4ef430  
+0x328 ( 808)  handler 0x4f69f0  
+0x329 ( 809)  handler 0x4f9a20  
+0x32a ( 810)  handler 0x4f1c10  
+0x32c ( 812)  handler 0x5044b0  (null) | Total %d licenses
+0x32e ( 814)  handler 0x5045a0  (null) | %hd: Total %d lconditions | GC_Reputation_01 | GC_Reputation_02 | GC_Reputation_03
+0x330 ( 816)  handler 0x4fde60  ME_AcroComboRepair | ME_ReverseComboRepair | ME_UseBoost50Recovery
+0x331 ( 817)  handler 0x4ef4a0  (null)
+0x337 ( 823)  handler 0x4eb8b0  10052 | GlobalText
+0x33f ( 831)  handler 0x50ce40  XiGameCharData::Get(). No dynamic control.
+0x341 ( 833)  handler 0x50dd70  XiGameCharData::Get(). No dynamic control.
+0x343 ( 835)  handler 0x50cea0  10634 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0x349 ( 841)  handler 0x50cb20  XiGameCharData::Get(). No dynamic control.
+0x34b ( 843)  handler 0x50d7a0  10813 | Lclient
+0x34d ( 845)  handler 0x50cd10  XiGameCharData::Get(). No dynamic control.
+0x34f ( 847)  handler 0x50d990  10016 | 10017 | Lclient
+0x351 ( 849)  handler 0x50db10  10018 | 10019 | Lclient
+0x354 ( 852)  handler 0x50cd40  10328
+0x356 ( 854)  handler 0x50cd10  XiGameCharData::Get(). No dynamic control.
+0x358 ( 856)  handler 0x50dc70  
+0x359 ( 857)  handler 0x50d5d0  XiGameCharData::Get(). No dynamic control.
+0x35b ( 859)  handler 0x50ccc0  
+0x35d ( 861)  handler 0x50df20  
+0x35f ( 863)  handler 0x50d610  
+0x365 ( 869)  handler 0x50cd90  10636 | GlobalText
+0x367 ( 871)  handler 0x50cf00  10020 | GlobalText
+0x369 ( 873)  handler 0x50d4d0  10022 | GlobalText
+0x36b ( 875)  handler 0x50dde0  10023 | Lsystem
+0x36c ( 876)  handler 0x50d020  10021 | GlobalText
+0x36d ( 877)  handler 0x50d0f0  10814 | 10815 | 10816 | 10817 | 10818 | 10819
+0x375 ( 885)  handler 0x50d5c0  
+0x384 ( 900)  handler 0x50d680  
+0x386 ( 902)  handler 0x50d640  10343 | 10344 | 10345 | 10346 | 10347 | 11391
+0x388 ( 904)  handler 0x50dfe0  10199 | 11261 | 10200
+0x38d ( 909)  handler 0x50e020  
+0x38f ( 911)  handler 0x50d6a0  
+0x390 ( 912)  handler 0x50dfb0  
+0x391 ( 913)  handler 0x50e030  
+0x392 ( 914)  handler 0x50e060  
+0x393 ( 915)  handler 0x50d6c0  10552 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0x394 ( 916)  handler 0x50a4b0  
+0x396 ( 918)  handler 0x50ac40  
+0x398 ( 920)  handler 0x508290  10293 | GlobalText
+0x3df ( 991)  handler 0x4f3b20  NewInstant
+0x3e1 ( 993)  handler 0x4fec70  11156 | LUnknown | Lknown | LExodus Quake | LMecha Watch | LLine Ball
+0x3e3 ( 995)  handler 0x4f3da0  11157
+0x3e5 ( 997)  handler 0x4f3ff0  XiGameCharData::Get(). No dynamic control.
+0x3e6 ( 998)  handler 0x4efa30  11158
+0x3e8 (1000)  handler 0x4f3ed0  11159
+0x3ea (1002)  handler 0x4f4140  XiGameCharData::Get(). No dynamic control. | 10053
+0x3f4 (1012)  handler 0x4efe90  
+0x3f6 (1014)  handler 0x4fb1b0  
+0x3f8 (1016)  handler 0x4f66b0  10143 | 10660 | 10144 | 10145 | 10146 | 10147
+0x3fa (1018)  handler 0x4f6730  
+0x3fc (1020)  handler 0x4f6760  
+0x3fd (1021)  handler 0x4efe70  
+0x410 (1040)  handler 0x4f67d0  10041 | XiGameCharData::Get(). No dynamic control. | 10053 | GlobalText
+0x425 (1061)  handler 0x4f6840  XiGameCharData::Get(). No dynamic control.
+0x457 (1111)  handler 0x50c040  
+0x459 (1113)  handler 0x50c0d0  
+0x45b (1115)  handler 0x50c110  
+0x45c (1116)  handler 0x50be40  10024 | 10025
+0x45d (1117)  handler 0x50b990  
+0x45e (1118)  handler 0x50bab0  
+0x45f (1119)  handler 0x4efd30  
+0x460 (1120)  handler 0x50bc40  
+0x461 (1121)  handler 0x50c220  Rush Switch Error 1 (nCar( | Rush Switch Error 2 (nCar=
+0x462 (1122)  handler 0x50bc70  
+0x463 (1123)  handler 0x50bde0  
+0x464 (1124)  handler 0x50be20  
+0x467 (1127)  handler 0x50b8c0  UpdateRush(%02d %02d:%02d:%02d %d,%d,%d,%d,%d,%d,%d)
+0x47e (1150)  handler 0x504fe0  
+0x480 (1152)  handler 0x4f83c0  Mita500_2 | Mita500_3 | Mita500_4 | Mita500_1 | Mita500_Halloween_2 | Mita500_Halloween_3
+0x481 (1153)  handler 0x4f85e0  11058 | XiGameCharData::Get(). No dynamic control.
+0x488 (1160)  handler 0x4f8720  
+0x489 (1161)  handler 0x4f87b0  DayMission_Complete | 10931
+0x48c (1164)  handler 0x4f8920  10917 | GlobalText | XiGameCharData::Get(). No dynamic control.
+0x48d (1165)  handler 0x4f8cb0  11284 | 10913
+0x48f (1167)  handler 0x4fc690  10994 | 11151
+0x493 (1171)  handler 0x4f8e60  Event_Greenday_02 | GlobalText
+0x495 (1173)  handler 0x4f8f10  Event_Greenday_end | GlobalText
+0x4b1 (1201)  handler 0x4fa8f0  
+0x4b2 (1202)  handler 0x4fa960  
+0x4b4 (1204)  handler 0x4f6ab0  XiGameCharData::Get(). No dynamic control.
+0x4b6 (1206)  handler 0x4f6e90  10113
+0x4b8 (1208)  handler 0x4f6ec0  10114
+0x4ba (1210)  handler 0x4f6f20  10115
+0x4bc (1212)  handler 0x4f6a50  10116
+0x4be (1214)  handler 0x4f6fa0  11064 | GlobalText
+0x4c0 (1216)  handler 0x4f6fe0  11295 | GlobalText
+0x4c3 (1219)  handler 0x4efef0  
+0x515 (1301)  handler 0x4fb230  %04u-%02u-%02u | 10301 | %d Mileage | %d Mito | 10302
+0x517 (1303)  handler 0x4f6d30  XiGameCharData::Get(). No dynamic control.
+0x519 (1305)  handler 0x4f6df0  10111 | 10112
+0x51b (1307)  handler 0x4efeb0  10106
+0x51c (1308)  handler 0x4f6f60  
+0x51e (1310)  handler 0x4f75f0  %d. %s | 10555 | %d %s
+0x528 (1320)  handler 0x505b80  
+0x52a (1322)  handler 0x505bf0  
+0x52c (1324)  handler 0x505c30  
+0x52d (1325)  handler 0x505c50  
+0x52e (1326)  handler 0x505c80  
+0x52f (1327)  handler 0x505c10  
+0x547 (1351)  handler 0x4fd670  MyStickerLIstAck:
+0x549 (1353)  handler 0x4fd350  Sticker | 10108 | attachstickerAck:
+0x54b (1355)  handler 0x4fd530  detachstickerAck:
+0x54c (1356)  handler 0x4f6c10  10640 | selled sticker ::
+0x551 (1361)  handler 0x4f7630  ending record
+0x579 (1401)  handler 0x4f7030  XiGameCharData::Get(). No dynamic control.
+0x5ab (1451)  handler 0x4f8f70  10978
+0x5ad (1453)  handler 0x4f8ff0  
+0x5b5 (1461)  handler 0x4fc5c0  10978 | UseLuckyBagAck[%d]: Normal %s %d | UseLuckyBagAck[%d]: VShop %s %d
+0x5b7 (1463)  handler 0x4fc5f0  10978 | UseGWEventAck[%d]: Normal %s %d | UseGWEventAck[%d]: VShop %s %d
+0x5bf (1471)  handler 0x4fc620  10056 | 11153 | GlobalText
+0x5c9 (1481)  handler 0x501df0  
+0x5cb (1483)  handler 0x501f10  11031 | GlobalText
+0x5cd (1485)  handler 0x502010  11032 | GlobalText
+0x5cf (1487)  handler 0x4f9040  11038 | 11033 | 11034 | DB Server Error!! | 10500 | 11035
+0x5d1 (1489)  handler 0x502140  11036 | GlobalText
+0x5d3 (1491)  handler 0x4f93c0  XiGameCharData::Get(). No dynamic control.
+0x5d5 (1493)  handler 0x4f9450  
+0x5dd (1501)  handler 0x4f7210  i_autoquick | i_automitron | i_autodrive
+0x5e6 (1510)  handler 0x505070  
+0x5e8 (1512)  handler 0x4f9320  %d / %d
+0x5ea (1514)  handler 0x4f9370  %d / %d
+0x6a5 (1701)  handler 0x4fc2b0  
+0x6a7 (1703)  handler 0x4f7730  10117
+0x6a9 (1705)  handler 0x4f77f0  10118
+0x6ab (1707)  handler 0x4f7910  XiGameCharData::Get(). No dynamic control.
+0x6ad (1709)  handler 0x4fc2e0  
+0x6af (1711)  handler 0x4f7820  10033 | GlobalText | XiGameCharData::Get(). No dynamic control.
+0x6b0 (1712)  handler 0x4f78f0  
+0x6b2 (1714)  handler 0x4fc2e0  
+0x708 (1800)  handler 0x4f79d0  
+0x76d (1901)  handler 0x4f7a00  XiGameCharData::Get(). No dynamic control.
+0x7d1 (2001)  handler 0x4f7bb0  11198 | XiGameCharData::Get(). No dynamic control. | 10053 | GlobalText
+0x7d2 (2002)  handler 0x4f7e60  11197 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0x7d3 (2003)  handler 0x4f7f80  11199 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0x7d4 (2004)  handler 0x4f7ce0  11363 | 11362 | 11361 | 11352 | 11353 | 11354
+0x835 (2101)  handler 0x508220  
+0x836 (2102)  handler 0x508240  
+0x838 (2104)  handler 0x508260  
+0x839 (2105)  handler 0x509d60  
+0x83a (2106)  handler 0x509d90  XiGameCharData::Get(). No dynamic control. | 10053
+0x9c4 (2500)  handler 0x4f8390  
+0xa29 (2601)  handler 0x4f2150  11174 | XiGameCharData::Get(). No dynamic control. | GlobalText
+0xa2b (2603)  handler 0x4ef8a0  11178 | 11177
+0xa2d (2605)  handler 0x4f22a0  11171
+0xbb9 (3001)  handler 0x4f7a20  LNot the UnderCity Stage.
+0xbbb (3003)  handler 0x4f7a40  
+0xbbd (3005)  handler 0x4f7a60  LNot the UnderCity Stage.
+0xbbe (3006)  handler 0x4f7aa0  LHub clear Exp %d | LHub clear Mito %d
+0xbc3 (3011)  handler 0x4f7ff0  LNot the UnderCity Stage.
+0xbc5 (3013)  handler 0x4f8030  
+0xbc7 (3015)  handler 0x4f8050  LNot the UnderCity Stage.
+0xbc8 (3016)  handler 0x4f80d0  LBoss Hub clear Exp %d | LNot the UnderCity Stage.
+0xbc9 (3017)  handler 0x4f7fd0  LNot the UnderCity Stage.
+0xbcc (3020)  handler 0x4f81f0  LReward Exp %d | LReward Mito %d | 11114
+0xc1e (3102)  handler 0x4f4430  
+0xc24 (3108)  handler 0x4f4210  11002 | 11001
+0xc26 (3110)  handler 0x4f42e0  Exp. %d | XiGameCharData::Get(). No dynamic control. | 10053
+0xc27 (3111)  handler 0x501d20  
+0xc29 (3113)  handler 0x4f45b0  
+0xc81 (3201)  handler 0x4f9180  post_5th_00043 | post_5th_00042
+0xcef (3311)  handler 0x4f9460  
+0xcf2 (3314)  handler 0x4f9520  
+0xd48 (3400)  handler 0x5085f0  Championship_msg9 | Championship_msg10 | Championship_msg11 | Championship_msg12 | Championship_msg15 | Championship_msg13
+0xd49 (3401)  handler 0x507700  11515
+0xd4a (3402)  handler 0x507b90  Championship_msg3
+0xd4c (3404)  handler 0x5076c0  Rookie Class | TouringB Class | TouringA Class | GTMaster Class | 11505 | %02d:%02d:%02d
+0xd4e (3406)  handler 0x507870  
+0xd51 (3409)  handler 0x508b20  11592 | 11587 | 11588 | 11589 | 11505 | 11506
+0xd53 (3411)  handler 0x5078c0  GM_Rewardset_Success
+0xd55 (3413)  handler 0x5078f0  
+0xd57 (3415)  handler 0x508b90  11592 | 11587 | 11588 | 11589 | 11505 | 11506
+0xe11 (3601)  handler 0x4f16a0  11866 | 10501
+0xe13 (3603)  handler 0x4fc760  GHRestaurantAcceptFail | GlobalText
+0xe15 (3605)  handler 0x4f95d0  11903 | 11904 | 11905 | 11906 | cherry | %d%%
+0xe1b (3611)  handler 0x4efc40  
+0xe1d (3613)  handler 0x4efc40  
+0xe75 (3701)  handler 0x4fc8c0  XiGameCharData::Get(). No dynamic control.
+0xe79 (3705)  handler 0x4f9660  
+0xe7b (3707)  handler 0x4f9720  XiGameCharData::Get(). No dynamic control.
+0xe7c (3708)  handler 0x4f96c0  XiGameCharData::Get(). No dynamic control.
+0xe7e (3710)  handler 0x4f9780  XiGameCharData::Get(). No dynamic control. | 10771 | %s / %s

@@ -1,0 +1,806 @@
+{
+ "summary": {
+  "functions": 18647,
+  "total_kb": 4448.1,
+  "game_kb": 3719.6,
+  "replaced_kb": 728.5,
+  "converted_pct": 94.2,
+  "studied_functions": 3032,
+  "dialogs_total": 384,
+  "dialogs_used": 295,
+  "files_total": 523,
+  "files_used": 264
+ },
+ "subsystems": [
+  {
+   "subsystem": "Traffic & HUV AI",
+   "kb": 385.3,
+   "functions": 1748,
+   "studied": 29.5,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "TrafficSystem.cs (HUV pose modes), HuvRoutes.cs, ChaseRules.cs, Convoys.cs (kept escorts), Passerby.cs, Trains.cs, PvpTraffic.cs, ChaseMission.cs (TRAFFIC.md)",
+   "gaps": "road-map interpretation points marked inferred",
+   "ranges": [
+    "0x800000",
+    "0x7f0000",
+    "0x490000",
+    "0x4a0000"
+   ]
+  },
+  {
+   "subsystem": "PvP races, channels & gates",
+   "kb": 384.9,
+   "functions": 1440,
+   "studied": 48.4,
+   "dialog_cov": 68.1,
+   "missing_dialogs": [
+    "PVPENTRY 290000",
+    "PVP 990000",
+    "TOUR 1110000",
+    "PVP 1180000",
+    "PVP 1430000",
+    "PVP 1440000",
+    "PVP 1460000",
+    "SELCH 3400000",
+    "SELGATE 3650000",
+    "SELGATE 3660000",
+    "PVP 3750000",
+    "LADDERRANKING 3760000"
+   ],
+   "status": "converted",
+   "converted": 0.96,
+   "unity": "Pvp*.cs (incl. PvpMissionBattle, PvpGateEffects, PvpTourRewardGm, PvpReplay, PvpGhost), LapTimeBattle.cs, Ladder.cs, Tournament.cs, RaceMission.cs, OnlineRace.cs, RealMatchSkin.cs, server race.js/laptime.js/pvptour.js (PVP.md)",
+   "gaps": "mission-battle objects are client-side online",
+   "ranges": [
+    "0x570000",
+    "0x720000",
+    "0x560000",
+    "0x580000"
+   ]
+  },
+  {
+   "subsystem": "Missions (quests, delivery, patrol, stations)",
+   "kb": 337.8,
+   "functions": 1147,
+   "studied": 50.1,
+   "dialog_cov": 94.5,
+   "missing_dialogs": [
+    "PATROL 3370000"
+   ],
+   "status": "converted",
+   "converted": 0.96,
+   "unity": "QuestTracker.cs, StepQuests.cs, StepQuestRunner.cs, QsRankList.cs, StationPanel.cs (incl. INSTANT and event pair), DeliveryService.cs, InstantMissions.cs, PatrolMission.cs, MitaDrink.cs, MissionCommon.cs, Services/WorldMapPages.cs, server economy.js/partyplay.js/quests.js (MISSIONS.md)",
+   "gaps": "-",
+   "ranges": [
+    "0x700000",
+    "0x6f0000",
+    "0x550000",
+    "0x6a0000"
+   ]
+  },
+  {
+   "subsystem": "Events, gacha, lotto, coupons",
+   "kb": 238.7,
+   "functions": 1087,
+   "studied": 47.3,
+   "dialog_cov": 99.1,
+   "missing_dialogs": [
+    "FULLCOVER 3740000"
+   ],
+   "status": "converted",
+   "converted": 0.92,
+   "unity": "Events/* (incl. GachaInven, PickEm reels, HarvestScreens, CouponStamp, ObEvent, PropEvent, EventArtFallback), server events.js (EVENTS.md)",
+   "gaps": "art missing from this install (stand-ins)",
+   "ranges": [
+    "0x630000",
+    "0x690000",
+    "0x530000",
+    "0x620000"
+   ]
+  },
+  {
+   "subsystem": "Effects",
+   "kb": 224.7,
+   "functions": 682,
+   "studied": 43.4,
+   "dialog_cov": 0.0,
+   "missing_dialogs": [
+    "CHARLICENSE1 70000"
+   ],
+   "status": "converted",
+   "converted": 0.96,
+   "unity": "CarEffects.cs, NifParticleEffect.cs, GameEffects.cs, OrosAmbience.cs, PvpMissionBattle (t_ob_event_04) (EFFECTS.md)",
+   "gaps": "-",
+   "ranges": [
+    "0x6b0000",
+    "0x6a0000",
+    "0x690000",
+    "0x460000"
+   ]
+  },
+  {
+   "subsystem": "Networking",
+   "kb": 221.5,
+   "functions": 1116,
+   "studied": 20.6,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "replaced",
+   "converted": null,
+   "unity": "Net/NetClient.cs (WebSocket JSON) + DriftCityServer",
+   "gaps": "the original TCP protocol is replaced by our own",
+   "ranges": [
+    "0x7a0000",
+    "0x790000",
+    "0x780000",
+    "0x510000"
+   ]
+  },
+  {
+   "subsystem": "World streaming",
+   "kb": 214.1,
+   "functions": 990,
+   "studied": 14.3,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.97,
+   "unity": "CityLoader.cs (ground shadows), CityStreaming.cs (window, per-object fade), Core/CityMap.cs, RoadMapQuery.cs",
+   "gaps": "-",
+   "ranges": [
+    "0x410000",
+    "0x400000",
+    "0x420000",
+    "0x4b0000"
+   ]
+  },
+  {
+   "subsystem": "Inventory & items",
+   "kb": 206.7,
+   "functions": 660,
+   "studied": 43.4,
+   "dialog_cov": 89.7,
+   "missing_dialogs": [
+    "COUPONINFO 1330000",
+    "INVEN 3120000",
+    "POPUP 4170000"
+   ],
+   "status": "converted",
+   "converted": 0.96,
+   "unity": "Inventory/* (NDLG default, CarParts row 2 and options, SetParts, ItemPeriods, QuickSlots, BattleQuickSlots, BattleItemEffects, StickerPage), server items.js/carparts.js/trade.js (INVENTORY.md)",
+   "gaps": "-",
+   "ranges": [
+    "0x6d0000",
+    "0x6e0000",
+    "0x5c0000",
+    "0x5d0000"
+   ]
+  },
+  {
+   "subsystem": "Platform & system",
+   "kb": 183.2,
+   "functions": 547,
+   "studied": 12.2,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "replaced",
+   "converted": null,
+   "unity": "Unity player",
+   "gaps": "GameGuard, Hangame auth, crypto, CPU detection, crash dumps",
+   "ranges": [
+    "0x770000",
+    "0x4d0000",
+    "0x7b0000",
+    "0x4c0000"
+   ]
+  },
+  {
+   "subsystem": "LIB C runtime & compiler stubs",
+   "kb": 175.9,
+   "functions": 3155,
+   "studied": 4.1,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "replaced",
+   "converted": null,
+   "unity": ".NET",
+   "gaps": "compiler output",
+   "ranges": [
+    "0x840000",
+    "0x830000",
+    "0x850000",
+    "0x820000"
+   ]
+  },
+  {
+   "subsystem": "Packet handlers (server replies)",
+   "kb": 155.9,
+   "functions": 302,
+   "studied": 56.9,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.93,
+   "unity": "Net/OnlineSession.cs, Net/ServerNotices.cs, Services/*, feature routers + DriftCityServer (HANDLERS.md: 365 covered, 22 missing)",
+   "gaps": "sticker upload service, a few GM/debug replies",
+   "ranges": [
+    "0x5e0000",
+    "0x720000",
+    "0x620000",
+    "0x610000"
+   ]
+  },
+  {
+   "subsystem": "Custom shop (visual items)",
+   "kb": 152.9,
+   "functions": 539,
+   "studied": 25.7,
+   "dialog_cov": 68.5,
+   "missing_dialogs": [
+    "CHARLICENSE2 90000",
+    "CHARLICENSE3 110000",
+    "MINIMAP 210000",
+    "MINIMAP 220000",
+    "QUEST 460000",
+    "MYQUEST 470000",
+    "VIEWMAP 540000",
+    "VIEWMAP 560000",
+    "PVP 1030000",
+    "PVP 1040000",
+    "TOUR 1050000",
+    "PVP 1060000"
+   ],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "CustomShop.cs, Shops/*, VShopCategories.cs, CustomMarks.cs (local import), server vshop.js (SHOPS.md)",
+   "gaps": "G-Coin (no real money by design)",
+   "ranges": [
+    "0x650000",
+    "0x660000",
+    "0x640000",
+    "0x5a0000"
+   ]
+  },
+  {
+   "subsystem": "LIB ODE physics",
+   "kb": 132.3,
+   "functions": 360,
+   "studied": 3.3,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "replaced",
+   "converted": null,
+   "unity": "Unity PhysX + DriftCar.cs",
+   "gaps": "third-party library",
+   "ranges": [
+    "0x810000",
+    "0x820000",
+    "0x800000",
+    "0x7f0000"
+   ]
+  },
+  {
+   "subsystem": "Stages & flow",
+   "kb": 103.4,
+   "functions": 322,
+   "studied": 49.5,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.96,
+   "unity": "GameFlow.cs, ParkingLotStage.cs (tutorial car, arrival spots), UndercityStage.cs, EndingCredits.cs, Tutorial/*",
+   "gaps": "-",
+   "ranges": [
+    "0x4d0000",
+    "0x510000",
+    "0x740000",
+    "0x4b0000"
+   ]
+  },
+  {
+   "subsystem": "Party & friends",
+   "kb": 101.3,
+   "functions": 448,
+   "studied": 52.4,
+   "dialog_cov": 90.4,
+   "missing_dialogs": [
+    "ADDFRIEND 3710000",
+    "ADDFRIEND 3720000",
+    "ADDFRIEND 3730000"
+   ],
+   "status": "converted",
+   "converted": 0.92,
+   "unity": "Social/PartyWindow.cs, Friends.cs, BasicBarSocial.cs, PlayerMenu.cs, SocialCore.cs, Services/Recommend.cs, server social.js/world.js (SOCIAL.md)",
+   "gaps": "Hangame friend invites (Korean service)",
+   "ranges": [
+    "0x660000",
+    "0x600000",
+    "0x610000",
+    "0x670000"
+   ]
+  },
+  {
+   "subsystem": "UI framework",
+   "kb": 95.5,
+   "functions": 455,
+   "studied": 15.6,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.92,
+   "unity": "UI/NuiView.cs (exe control states, UI.md), UiManager.cs, OriginalMenus.cs",
+   "gaps": "IME composition, statics with six-digit colours, colour easing and per-state sounds",
+   "ranges": [
+    "0x7c0000",
+    "0x7b0000"
+   ]
+  },
+  {
+   "subsystem": "Teams & team battles",
+   "kb": 93.6,
+   "functions": 256,
+   "studied": 77.5,
+   "dialog_cov": 43.1,
+   "missing_dialogs": [
+    "TC 1970000",
+    "TC 2180000"
+   ],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "Social/Teams.cs, TeamBattle.cs, ChannelBattle.cs (limits, leader, ghost tickets), CrewMarkUpload.cs, server teams.js/channelbattle.js (SOCIAL.md)",
+   "gaps": "-",
+   "ranges": [
+    "0x670000",
+    "0x5b0000",
+    "0x580000",
+    "0x500000"
+   ]
+  },
+  {
+   "subsystem": "Vehicle visuals & parts",
+   "kb": 86.7,
+   "functions": 321,
+   "studied": 14.3,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.93,
+   "unity": "CarFactory.cs (_s fallback and LOD), CarPaint.cs, CustomMarks.cs, PartsCatalog.cs",
+   "gaps": "mark placement on cars without paint-layout sides",
+   "ranges": [
+    "0x460000",
+    "0x650000",
+    "0x640000",
+    "0x450000"
+   ]
+  },
+  {
+   "subsystem": "Data tables",
+   "kb": 84.2,
+   "functions": 507,
+   "studied": 8.5,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.93,
+   "unity": "GameTables.cs, XltTable, CityMapInfo.cs, RewardGroups.cs, VShopCategories.cs, NameFilter.cs, CityAmbience EnvTable, server gamedata.js (TABLES.md)",
+   "gaps": "tables of features the client never used",
+   "ranges": [
+    "0x7d0000",
+    "0x7e0000",
+    "0x490000",
+    "0x4b0000"
+   ]
+  },
+  {
+   "subsystem": "HUD",
+   "kb": 80.7,
+   "functions": 142,
+   "studied": 51.8,
+   "dialog_cov": 95.1,
+   "missing_dialogs": [
+    "MAIN 4050000"
+   ],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "Hud.cs (ADV and basic bars), HudPanels.cs (notebook, item shop, speed items), Minimap.cs, NamePlate.cs, DriftCombo.cs, QuickSlots.cs, GuideText.cs, CarAudio.cs, BonusBadges",
+   "gaps": "-",
+   "ranges": [
+    "0x5f0000",
+    "0x600000",
+    "0x5e0000",
+    "0x620000"
+   ]
+  },
+  {
+   "subsystem": "Vehicle physics",
+   "kb": 78.4,
+   "functions": 164,
+   "studied": 70.8,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.96,
+   "unity": "DriftCar.cs (assists, PvP multipliers, battle top speeds, durability), CarAssists.cs, ChaseCamera.cs (jump lift), Fuel/MittronFuel.cs (per-car tank) (PHYSICS.md)",
+   "gaps": "camera shake 0x479050, the server-set boost-end chance",
+   "ranges": [
+    "0x480000",
+    "0x470000",
+    "0x400000",
+    "0x690000"
+   ]
+  },
+  {
+   "subsystem": "Front end (login, server, characters)",
+   "kb": 78.4,
+   "functions": 328,
+   "studied": 37.7,
+   "dialog_cov": 99.4,
+   "missing_dialogs": [
+    "SELECT 3470000"
+   ],
+   "status": "converted",
+   "converted": 0.97,
+   "unity": "GameFlow.FrontEnd.cs, CharacterDeletion.cs, IntroScene.cs",
+   "gaps": "-",
+   "ranges": [
+    "0x760000",
+    "0x740000",
+    "0x750000",
+    "0x4e0000"
+   ]
+  },
+  {
+   "subsystem": "Car dealer",
+   "kb": 74.6,
+   "functions": 204,
+   "studied": 40.5,
+   "dialog_cov": 71.0,
+   "missing_dialogs": [
+    "PARTSINFO 1310000",
+    "AUTOSHOP 3270000",
+    "AUTOSHOP 3290000"
+   ],
+   "status": "converted",
+   "converted": 0.9,
+   "unity": "Shops/AdvancedDealer.cs, Menus.ClassicCarShop, Events/CouponBook (SHOPS.md)",
+   "gaps": "growth chart 3290000, car-bonus rows, promotion notice",
+   "ranges": [
+    "0x5a0000",
+    "0x590000",
+    "0x5b0000",
+    "0x640000"
+   ]
+  },
+  {
+   "subsystem": "UI screens (misc dialogs)",
+   "kb": 69.0,
+   "functions": 234,
+   "studied": 61.0,
+   "dialog_cov": 94.7,
+   "missing_dialogs": [
+    "DIALOG 3350000",
+    "VC 3840000",
+    "VC 3850000"
+   ],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "DriverInfoScreen.cs, Social/Community.cs, BasicBarSocial.cs, Mail.cs, HelpWindow.cs, CarAudio.cs, GuideText.cs, ChatBalloon.cs, AeroSet.cs, AutoFinder.cs, Fuel/*, Services/* (SCREENS.md, SERVICES.md)",
+   "gaps": "-",
+   "ranges": [
+    "0x540000",
+    "0x610000",
+    "0x5b0000",
+    "0x530000"
+   ]
+  },
+  {
+   "subsystem": "Chat & messages",
+   "kb": 61.8,
+   "functions": 183,
+   "studied": 55.4,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "Net/ChatBox.cs (modes incl. private channels, prefixes, whispers, word filter), UI/MsgBox.cs, NameFilter.cs (SCREENS.md, AUDIO.md)",
+   "gaps": "-",
+   "ranges": [
+    "0x5b0000",
+    "0x760000",
+    "0x610000",
+    "0x5c0000"
+   ]
+  },
+  {
+   "subsystem": "Parts shop, manufacturing & licences",
+   "kb": 59.8,
+   "functions": 223,
+   "studied": 35.3,
+   "dialog_cov": 74.5,
+   "missing_dialogs": [
+    "PARTSSHOP 1290000"
+   ],
+   "status": "converted",
+   "converted": 0.93,
+   "unity": "WorkshopMenus.cs, Workshop.cs, Licences.cs (LicencePages: LICENSE 710000, OTHERLISENCEBASE 3070000)",
+   "gaps": "-",
+   "ranges": [
+    "0x6d0000",
+    "0x6e0000",
+    "0x610000",
+    "0x4f0000"
+   ]
+  },
+  {
+   "subsystem": "Undercity",
+   "kb": 56.2,
+   "functions": 210,
+   "studied": 78.7,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "UndercityStage.cs (+Online), UndercityRoads.cs (0x716890 towers), UndercityHud.cs, UndercityEntrance.cs, UndercityParty.cs, UndercityData.cs, server undercity.js (UNDERCITY.md)",
+   "gaps": "road-map points marked inferred",
+   "ranges": [
+    "0x710000",
+    "0x680000",
+    "0x760000",
+    "0x740000"
+   ]
+  },
+  {
+   "subsystem": "Progress & rewards",
+   "kb": 53.4,
+   "functions": 58,
+   "studied": 47.0,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.85,
+   "unity": "Progress.cs, Multipliers.cs (golden time, Santa, anniversary), BonusBadges, PlayerProfile.cs, server workshop.js/multipliers.js (PROGRESS.md)",
+   "gaps": "PC-room bonus (no PC rooms)",
+   "ranges": [
+    "0x5d0000",
+    "0x620000",
+    "0x570000",
+    "0x580000"
+   ]
+  },
+  {
+   "subsystem": "HUV chases",
+   "kb": 48.7,
+   "functions": 198,
+   "studied": 71.8,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "ChaseMission.cs, ChaseScreens.cs, ChaseRules.cs, RushTime.cs, VirtualChase.cs (server-run with real players), AutoDrive.cs, server huvrules.js/huvevents.js/partyplay.js (CHASES.md)",
+   "gaps": "V-HUV party notice and team points, 10961 coupons",
+   "ranges": [
+    "0x500000",
+    "0x4f0000",
+    "0x550000",
+    "0x540000"
+   ]
+  },
+  {
+   "subsystem": "Renderer",
+   "kb": 37.6,
+   "functions": 91,
+   "studied": 38.7,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.8,
+   "unity": "Shaders/*, OriginalLook.cs",
+   "gaps": "projected shadows, post effects (blur, DOF)",
+   "ranges": [
+    "0x420000",
+    "0x530000",
+    "0x4c0000",
+    "0x440000"
+   ]
+  },
+  {
+   "subsystem": "Audio",
+   "kb": 36.1,
+   "functions": 64,
+   "studied": 79.1,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.92,
+   "unity": "AudioLibrary.cs (substitutes), Audio/CityAmbience.cs (env.xlt), Audio/VoiceLines.cs, EngineAudio.cs, CarSounds.cs (AUDIO.md)",
+   "gaps": "SID_STREET_AMBIENT (registered, never played by the exe)",
+   "ranges": [
+    "0x520000",
+    "0x4c0000",
+    "0x420000",
+    "0x4d0000"
+   ]
+  },
+  {
+   "subsystem": "Auction",
+   "kb": 26.6,
+   "functions": 99,
+   "studied": 72.2,
+   "dialog_cov": 0.0,
+   "missing_dialogs": [
+    "AUCTION 1660000"
+   ],
+   "status": "converted",
+   "converted": 0.85,
+   "unity": "Auction/AuctionHouse.cs, AuctionMarket.cs, AuctionPage.cs, server auction.js/goods.js (SHOPS.md)",
+   "gaps": "bidding UI (the client window has none), the original server bidding rules",
+   "ranges": [
+    "0x590000",
+    "0x620000",
+    "0x760000",
+    "0x6f0000"
+   ]
+  },
+  {
+   "subsystem": "Input",
+   "kb": 21.2,
+   "functions": 63,
+   "studied": 34.0,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.9,
+   "unity": "Options/KeyBindings.cs, DriftCar input, UiManager hotkeys",
+   "gaps": "-",
+   "ranges": [
+    "0x4e0000",
+    "0x670000",
+    "0x5d0000",
+    "0x610000"
+   ]
+  },
+  {
+   "subsystem": "Options & quit",
+   "kb": 20.4,
+   "functions": 89,
+   "studied": 33.8,
+   "dialog_cov": 93.2,
+   "missing_dialogs": [
+    "QUIT 4030000"
+   ],
+   "status": "converted",
+   "converted": 0.95,
+   "unity": "Options/GameOptions.cs, OriginalMenus.Options.cs, OriginalMenus.ClassicOptions.cs, KeyBindings.cs, quit menu (OPTIONS.md)",
+   "gaps": "DOF/environment maps stored but not drawn",
+   "ranges": [
+    "0x530000",
+    "0x620000",
+    "0x520000",
+    "0x570000"
+   ]
+  },
+  {
+   "subsystem": "Camera",
+   "kb": 19.4,
+   "functions": 63,
+   "studied": 55.7,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "partial",
+   "converted": 0.75,
+   "unity": "ChaseCamera.cs, PvpCameras.cs (pvpready/pvpstart/pvpgoalin, VIEWING)",
+   "gaps": "watch / spot-watch / ending cameras, rear and side views",
+   "ranges": [
+    "0x5d0000",
+    "0x4d0000",
+    "0x740000",
+    "0x490000"
+   ]
+  },
+  {
+   "subsystem": "Garage",
+   "kb": 15.5,
+   "functions": 56,
+   "studied": 35.6,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.9,
+   "unity": "Menus.Garage, GarageLighting",
+   "gaps": "-",
+   "ranges": [
+    "0x740000",
+    "0x640000",
+    "0x4f0000",
+    "0x500000"
+   ]
+  },
+  {
+   "subsystem": "Lighting, sky & weather",
+   "kb": 14.0,
+   "functions": 43,
+   "studied": 38.0,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "converted",
+   "converted": 0.9,
+   "unity": "OriginalLook.cs, WeatherClock.cs, LensFlare.cs",
+   "gaps": "-",
+   "ranges": [
+    "0x430000",
+    "0x400000",
+    "0x420000"
+   ]
+  },
+  {
+   "subsystem": "LIB OPCODE collision",
+   "kb": 13.0,
+   "functions": 35,
+   "studied": 1.6,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "replaced",
+   "converted": null,
+   "unity": "Unity PhysX",
+   "gaps": "third-party library",
+   "ranges": [
+    "0x7f0000",
+    "0x820000"
+   ]
+  },
+  {
+   "subsystem": "LIB XML parser",
+   "kb": 2.6,
+   "functions": 5,
+   "studied": 0.0,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "replaced",
+   "converted": null,
+   "unity": ".NET",
+   "gaps": "third-party library",
+   "ranges": [
+    "0x7c0000"
+   ]
+  },
+  {
+   "subsystem": "UI screens (other)",
+   "kb": 1.4,
+   "functions": 6,
+   "studied": 33.7,
+   "dialog_cov": 100.0,
+   "missing_dialogs": [],
+   "status": "missing",
+   "converted": 0,
+   "unity": "-",
+   "gaps": "delivery play info, licence pages",
+   "ranges": [
+    "0x4f0000",
+    "0x550000",
+    "0x5c0000"
+   ]
+  },
+  {
+   "subsystem": "Unlabelled game code",
+   "kb": 0.7,
+   "functions": 7,
+   "studied": 25.6,
+   "dialog_cov": null,
+   "missing_dialogs": [],
+   "status": "partial",
+   "converted": 0.25,
+   "unity": "-",
+   "gaps": "a few small runs (UNLABELLED.md)",
+   "ranges": [
+    "0x4e0000",
+    "0x680000",
+    "0x6c0000",
+    "0x460000"
+   ]
+  }
+ ]
+}

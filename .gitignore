@@ -1,0 +1,61 @@
+# --- No game content, ever -------------------------------------------------
+# The rebuild reads the original files from your own install at runtime.
+gameroot.txt
+DriftCityOffline/GameData/
+DriftCityOffline/Assets/StreamingAssets/DriftCityData/
+DriftCityOffline/Assets/StreamingAssets/DriftCityData.meta
+DriftCityServer/gamedata/
+*.agt
+Patch.*
+PatchMod.*
+*.nif
+*.kf
+*.kfm
+*.dds
+*.tga
+*.xlt
+*.tdf
+*.nui
+*.chpath
+*.xipath2
+*.tcs
+*.signal
+*.wav
+*.ogg
+*.mp3
+*.exe
+*.dll
+*.pdb
+
+# --- Unity -------------------------------------------------------------------
+DriftCityOffline/[Ll]ibrary/
+DriftCityOffline/[Tt]emp/
+DriftCityOffline/[Oo]bj/
+DriftCityOffline/[Bb]uild/
+DriftCityOffline/[Bb]uilds/
+DriftCityOffline/[Ll]ogs/
+DriftCityOffline/[Uu]ser[Ss]ettings/
+DriftCityOffline/[Pp]review/
+DriftCityOffline/*.csproj
+DriftCityOffline/*.sln
+DriftCityOffline/*.slnx
+DriftCityOffline/.vs/
+DriftCityOffline/.vscode/
+DriftCityOffline/servers.txt
+DriftCityOffline/*.log
+
+# --- Server ------------------------------------------------------------------
+node_modules/
+DriftCityServer/data/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# --- Tools -------------------------------------------------------------------
+DriftCityStaging/**/bin/
+DriftCityStaging/**/obj/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

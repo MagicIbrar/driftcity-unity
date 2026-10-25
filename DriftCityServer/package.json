@@ -1,0 +1,21 @@
+{
+  "name": "driftcity-offline-server",
+  "version": "1.0.0",
+  "description": "Multiplayer server for the Drift City Offline Unity rebuild (own protocol)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "private": true
+}

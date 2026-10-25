@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drift City Rebuild</title>
+<meta name="description" content="A Unity rebuild of the online racing game Drift City that runs on your own copy of the original game files.">
+<meta property="og:title" content="Drift City Rebuild">
+<meta property="og:description" content="Drift City rebuilt in Unity from the original executable. Runs on your own copy of the game.">
+<meta property="og:image" content="img/city.jpg">
+<style>
+:root {
+  --bg: #0e0f11; --panel: #17191c; --panel2: #1f2226; --text: #e9e6df; --muted: #a39f96; --line: #2c3035;
+  --accent: #f2a03d; --accent2: #7fb7ff; --good: #7ccf8a; --warn: #e8c56a;
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg: #f6f4ef; --panel: #ffffff; --panel2: #f0ede6; --text: #1d1f22; --muted: #5d5a54; --line: #ddd8cd;
+          --accent: #c06a0c; --accent2: #2a64b8; --good: #2f8a43; --warn: #9a7410; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--font); }
+a { color: var(--accent2); }
+code, pre { font-family: var(--mono); font-size: 0.9em; }
+code { background: var(--panel2); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--panel2); padding: 14px 16px; border-radius: 8px; overflow-x: auto; border: 1px solid var(--line); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+nav { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; gap: 18px; align-items: center; height: 54px; overflow-x: auto; white-space: nowrap; }
+nav .brand { font-weight: 700; color: var(--text); text-decoration: none; margin-right: auto; }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+nav a:hover { color: var(--text); }
+header.hero { padding: 64px 0 36px; }
+.hero h1 { font-size: clamp(30px, 5vw, 52px); line-height: 1.08; margin: 0 0 16px; letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p.lede { font-size: 19px; color: var(--muted); max-width: 760px; margin: 0 0 22px; }
+.notice { border: 1px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+          border-radius: 10px; padding: 14px 18px; max-width: 760px; }
+.btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600;
+       border: 1px solid var(--line); color: var(--text); background: var(--panel); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #1a1205; }
+.hero-shot { margin-top: 34px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.hero-shot img { display: block; width: 100%; height: auto; }
+section { padding: 48px 0; border-top: 1px solid var(--line); }
+h2 { font-size: 28px; margin: 0 0 8px; }
+h3 { font-size: 18px; margin: 0 0 6px; }
+.sub { color: var(--muted); margin: 0 0 26px; max-width: 760px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+.kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.kpi b { display: block; font-size: 32px; color: var(--accent); line-height: 1.1; }
+.kpi span { color: var(--muted); font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+.card p, .card ul { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.card ul { padding-left: 18px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.gallery figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.gallery img { display: block; width: 100%; height: auto; }
+.gallery figcaption { padding: 10px 14px; font-size: 14px; color: var(--muted); }
+.bars { display: grid; gap: 8px; }
+.bar { display: grid; grid-template-columns: minmax(150px, 260px) 1fr 52px; gap: 12px; align-items: center; font-size: 14px; }
+.bar .track { height: 10px; background: var(--panel2); border-radius: 6px; overflow: hidden; border: 1px solid var(--line); }
+.bar .fill { height: 100%; background: var(--accent); }
+.bar .pct { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+.bar .name { color: var(--text); }
+.bar .name small { color: var(--muted); }
+ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+ol.steps > li { counter-increment: s; background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+                padding: 16px 18px 16px 58px; position: relative; }
+ol.steps > li::before { content: counter(s); position: absolute; left: 18px; top: 15px; width: 26px; height: 26px;
+                        border-radius: 50%; background: var(--accent); color: #1a1205; font-weight: 700;
+                        display: grid; place-items: center; font-size: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+.diagram { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; overflow-x: auto; }
+.diagram svg { display: block; min-width: 760px; width: 100%; height: auto; }
+.diagram text { font-family: var(--font); fill: var(--text); }
+.diagram .muted { fill: var(--muted); }
+.diagram .box { fill: var(--panel2); stroke: var(--line); }
+.diagram .hot { fill: color-mix(in srgb, var(--accent) 18%, var(--panel2)); stroke: var(--accent); }
+.diagram .arrow { stroke: var(--muted); stroke-width: 1.5; fill: none; marker-end: url(#ah); }
+footer { padding: 36px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+@media (max-width: 640px) { .bar { grid-template-columns: 1fr 52px; } .bar .track { grid-column: 1 / -1; grid-row: 2; } }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#">Drift City Rebuild</a>
+  <a href="#status">Status</a><a href="#features">Features</a><a href="#how">How it works</a>
+  <a href="#setup">Setup</a><a href="#server">Server</a><a href="#game">The game</a><a href="#legal">Legal</a>
+  <a href="https://github.com/MagicIbrar/driftcity-unity">GitHub</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Drift City,<br><span>rebuilt in Unity</span></h1>
+  <p class="lede">A from-scratch rebuild of the online racing game Drift City, written by reverse-engineering the original
+  <code>DriftCity.exe</code> function by function, with its own game server. It runs on your own installed copy of the
+  client: the cities, the cars, the screens, the sounds and every game table are read from your game folder while it
+  plays.</p>
+  <div class="notice"><b>You need your own copy of the Drift City client.</b> This project contains no game content: no
+  models, textures, sounds, music, interface art, data tables or executable. It reads them from your installation at
+  runtime and never modifies them.</div>
+  <div class="btns">
+    <a class="btn primary" href="#setup">Set it up</a>
+    <a class="btn" href="https://github.com/MagicIbrar/driftcity-unity">Source on GitHub</a>
+    <a class="btn" href="#status">What works</a>
+  </div>
+  <div class="hero-shot"><img src="img/city.jpg" alt="Driving through Cras at sunset with the original HUD, minimap and chat" width="1280" height="960"></div>
+</div></header>
+
+<section id="status"><div class="wrap">
+  <h2>Status</h2>
+  <p class="sub">Coverage is measured against the original executable: all 18,647 functions of <code>DriftCity.exe</code>
+  were sorted into subsystems, and each subsystem is compared with what the Unity client and the server do.</p>
+  <div class="kpis">
+    <div class="kpi"><b>94%</b><span>of the game's own code converted (estimate, by code size)</span></div>
+    <div class="kpi"><b>3,032</b><span>functions studied one by one and cited in the reverse-engineering notes</span></div>
+    <div class="kpi"><b>295 / 384</b><span>of the interface dialogs the exe drives are rebuilt from the original layout</span></div>
+    <div class="kpi"><b>85 + 125</b><span>automated Unity play tests and server tests</span></div>
+  </div>
+  <h3 style="margin-top:34px">By subsystem</h3>
+  <p class="sub" style="margin-bottom:14px">Share converted, largest subsystems first (size of the original code in brackets).
+  Libraries and platform code the rebuild replaces on purpose (C runtime, ODE physics, the original network protocol,
+  anti-cheat and login services) are left out.</p>
+  <div class="bars" id="bars"></div>
+  <p class="sub" style="margin-top:18px">What is left is mostly what can't be rebuilt one to one: the original
+  company's services (the cash shop, PC-room bonuses, portal friend invites), GM-only and debug replies, and rules the
+  original server held, for which the rebuild documents its own. See the
+  <a href="https://github.com/MagicIbrar/driftcity-unity/blob/main/DriftCity_RE/CODEMAP.md">code map</a>.</p>
+</div></section>
+
+<section id="shots"><div class="wrap">
+  <h2>Screenshots</h2>
+  <p class="sub">The rebuild running on the original data. Everything you see is drawn from the game's own files.</p>
+  <div class="gallery">
+    <figure><img src="img/race.jpg" alt="A Battle Zone race with the original race HUD" loading="lazy" width="1280" height="960"><figcaption>A Battle Zone race on an original track with the race HUD and live positions</figcaption></figure>
+    <figure><img src="img/battlezone.jpg" alt="The Battle Zone wait room" loading="lazy" width="1280" height="960"><figcaption>The 16-slot Battle Zone wait room with AI drivers and track selection</figcaption></figure>
+    <figure><img src="img/undercity.jpg" alt="The Undercity stage" loading="lazy" width="1280" height="960"><figcaption>The Undercity: destroying HUBs underground, with the party counters</figcaption></figure>
+    <figure><img src="img/undercity-result.jpg" alt="The Undercity result board" loading="lazy" width="1280" height="960"><figcaption>The Undercity result board with class, rewards and the party's rows</figcaption></figure>
+    <figure><img src="img/dealer.jpg" alt="The car show room" loading="lazy" width="1280" height="960"><figcaption>The car show room (the client's ADV dealer) with the 3D showroom</figcaption></figure>
+    <figure><img src="img/party.jpg" alt="Driving in a party" loading="lazy" width="1280" height="960"><figcaption>A party of three on the street, with the party list and chat</figcaption></figure>
+    <figure><img src="img/quest.jpg" alt="A step quest with its timer" loading="lazy" width="1280" height="960"><figcaption>A step quest from the station, with the original timer panel</figcaption></figure>
+    <figure><img src="img/charger.jpg" alt="A Mittron charger owned by a crew" loading="lazy" width="1280" height="960"><figcaption>Filling up Mittron at a crew-owned station</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <h2>What it can do</h2>
+  <p class="sub">Offline on your own, or online on a server you host. A selection; the
+  <a href="https://github.com/MagicIbrar/driftcity-unity/blob/main/DriftCityOffline/README.md">client README</a> lists everything.</p>
+  <div class="grid">
+    <div class="card"><h3>The open cities</h3><p>Moon Palace, Koinonia, Cras and Oros from the game's own terrain, blocks and
+    props, with traffic on the original lanes, pedestrians, trains, the weather clock, the sky domes and baked ground
+    shadows.</p></div>
+    <div class="card"><h3>Driving</h3><p>The client's car model recovered from the exe: drifting, the booster and its
+    Mittron fuel, jumps, skill items, durability, and every car of the vehicle list with its grades and parts.</p></div>
+    <div class="card"><h3>HUV chases</h3><p>The HUVs drive the client's routes; bosses run their recorded paths with their
+    escorts. Party chases share one HUV, and Rush Time and the Virtual HUV run with real players.</p></div>
+    <div class="card"><h3>The Battle Zone</h3><p>Lobby, 16-slot wait rooms, team and wager rooms, Real Match, lap-time
+    battles, the GT Championship, the ladder, spectating, ghost battles, replays and crew Channel Battles.</p></div>
+    <div class="card"><h3>The Undercity</h3><p>The underground party mode with its HUB phase, the Main HUB behind its
+    shield, the HUV waves and the boss, solo with AI partners or with a real party online.</p></div>
+    <div class="card"><h3>Missions</h3><p>The main quests, the step quests of the stations, deliveries, patrols, instant
+    missions, the Team ROO / OMD storyline split and its ending, and the apprentice tutorial for new drivers.</p></div>
+    <div class="card"><h3>Shops and items</h3><p>The car show room, the custom shop with period prices, parts shop,
+    manufacturing, licences, the inventory with set parts and quick slots, trade and the Auction House.</p></div>
+    <div class="card"><h3>Social</h3><p>Parties, friends, notes, crews, private chat channels, the chat modes and the word
+    filter, driver info cards and recommendations.</p></div>
+    <div class="card"><h3>Events</h3><p>Gacha, lotto, coupons, the token book, lucky bags and the seasonal city events
+    (Christmas trees, the harvest, Halloween), switched by date or for testing.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="grid">
+    <div class="card"><h3>Reading the game</h3><p>The client mounts the game's NayaPack archives (<code>.agt</code> and the
+    patches) and parses its formats directly: Gamebryo NIF 20 models and animations, DDS textures, the city block and
+    terrain files, the road and traffic networks, the XLT/TDF tables and the <code>game.nui</code> interface layouts.</p></div>
+    <div class="card"><h3>Reverse engineering</h3><p>Every system was studied in the exe with Ghidra, function by function.
+    The notes in <code>DriftCity_RE</code> give the addresses, mark what is exact and what is inferred, and document the
+    rebuild's own rule wherever the original server decided.</p></div>
+    <div class="card"><h3>The interface</h3><p>All of the client's dialogs are drawn from <code>game.nui</code> with their
+    original images, state rules and hotkeys, so the screens are the game's own rather than look-alikes.</p></div>
+    <div class="card"><h3>The server</h3><p>The original server is gone, so the rebuild has its own (Node.js, JSON over
+    WebSocket, SQLite). It is authoritative for money, rewards and items and runs the online modes.</p></div>
+  </div>
+</div></section>
+
+<section id="setup"><div class="wrap">
+  <h2>Set it up with your game</h2>
+  <p class="sub">You need the installed Drift City client: the folder that contains <code>DriftCity.exe</code> and
+  <code>Data</code> (with <code>Init.agt</code>, <code>World.agt</code> ...). The rebuild finds it in this order:</p>
+  <ol class="steps">
+    <li><code>-gameRoot "C:\Games\Drift City"</code> on the command line</li>
+    <li>the <code>DRIFTCITY_ROOT</code> environment variable</li>
+    <li>a file named <code>gameroot.txt</code> next to the player exe (or next to <code>Assets</code> in the editor) holding that path</li>
+  </ol>
+  <p>It only reads the folder; it never writes to it.</p>
+  <h3>Build and run the client</h3>
+  <ol class="steps">
+    <li>Install <b>Unity 6000.4.2f1</b> (Unity Hub).</li>
+    <li>Clone the repository and open <code>DriftCityOffline</code> in Unity.</li>
+    <li>Create <code>DriftCityOffline/gameroot.txt</code> with your game path.</li>
+    <li>Open <code>Assets/Scenes/DriftCityGame.unity</code> and press Play, or build with
+    <code>Drift City &gt; Build Windows Player</code>. Put a <code>gameroot.txt</code> next to the built
+    <code>DriftCityOffline.exe</code> too.</li>
+  </ol>
+  <pre>git clone https://github.com/MagicIbrar/driftcity-unity.git
+echo C:\Games\Drift City&gt; driftcity-unity\DriftCityOffline\gameroot.txt</pre>
+</div></section>
+
+<section id="server"><div class="wrap">
+  <h2>Host the server</h2>
+  <p class="sub">Only needed to play online. The client plays offline without it.</p>
+  <ol class="steps">
+    <li>Install <b>Node.js 22</b> or newer.</li>
+    <li>In <code>DriftCityServer</code>: <code>npm install</code>, then put your game path in <code>gameroot.txt</code>
+    (or set <code>DRIFTCITY_ROOT</code>).</li>
+    <li>Start it with <code>npm start</code> (or <code>start-server.bat</code>). On the first start it reads the tables it
+    needs from your game's archives into a local <code>gamedata</code> folder, then listens on TCP port 7860.</li>
+    <li>Players pick "This PC" on the server list, or add <code>Name|ws://HOST:7860</code> to <code>servers.txt</code>
+    next to the client.</li>
+  </ol>
+  <p>Admins can type <code>players</code>, <code>say</code>, <code>announce</code>, <code>kick</code>, <code>mute</code>, <code>ban</code> and more in the server
+  window; <code>node tools/bot.js 3</code> starts test drivers.</p>
+</div></section>
+
+<section id="game"><div class="wrap">
+  <h2>The game</h2>
+  <p>Drift City is an online racing game built on the Gamebryo engine and run through the Hangame portal: players
+  drive freely through open cities, take missions from the stations, chase HUVs, race each other in the Battle Zone,
+  form crews to fight over channels, and team up underground in the Undercity. Its official servers have been closed
+  for years. This rebuild keeps the game playable from the client files its players still have, and documents how it
+  worked.</p>
+</div></section>
+
+<section id="credits"><div class="wrap">
+  <h2>Credits</h2>
+  <p>Thank you to everyone who kept their Drift City client and helped test the rebuild.</p>
+</div></section>
+
+<section id="legal"><div class="wrap">
+  <h2>Legal</h2>
+  <p class="muted">A non-commercial fan project for preservation and study, not affiliated with or endorsed by the game's
+  developer, publisher or the Hangame portal. Drift City and all related names are trademarks of their owners. The
+  code is MIT licensed; the game and all of its content remain the property of their owners and are not distributed
+  here. Please do not open issues or pull requests that contain game files or content extracted from them.</p>
+</div></section>
+
+<script>
+// Share converted per subsystem (DriftCity_RE/codemap/codemap.json, by original code size)
+const subsystems = [
+  ["Traffic & HUV AI", 385, 95], ["PvP races, channels & gates", 385, 96], ["Missions (quests, delivery, patrol, stations)", 338, 96],
+  ["Events, gacha, lotto, coupons", 239, 92], ["Effects", 225, 96], ["World streaming", 214, 97], ["Inventory & items", 207, 96],
+  ["Server replies (packet handlers)", 156, 93], ["Custom shop", 153, 95], ["Stages & flow", 103, 96], ["Party & friends", 101, 92],
+  ["UI framework", 96, 92], ["Crews & team battles", 94, 95], ["Vehicle visuals & parts", 87, 93], ["Data tables", 84, 93],
+  ["HUD", 81, 95], ["Vehicle physics", 78, 96], ["Front end", 78, 97], ["Car dealer", 75, 90], ["Other screens", 69, 95],
+  ["Chat & messages", 62, 95], ["Parts shop, manufacturing & licences", 60, 93], ["Undercity", 56, 95], ["Progress & rewards", 53, 85],
+  ["HUV chases", 49, 95], ["Renderer", 38, 80], ["Audio", 36, 92], ["Auction", 27, 85], ["Input", 21, 90], ["Options", 20, 95],
+  ["Camera", 19, 75], ["Garage", 16, 90], ["Lighting, sky & weather", 14, 90]];
+const bars = document.getElementById("bars");
+for (const [name, kb, pct] of subsystems) {
+  const row = document.createElement("div");
+  row.className = "bar";
+  row.innerHTML = `<div class="name">${name} <small>(${kb} KB)</small></div>` +
+    `<div class="track"><div class="fill" style="width:${pct}%"></div></div><div class="pct">${pct}%</div>`;
+  bars.appendChild(row);
+}
+</script>
+</body>
+</html>

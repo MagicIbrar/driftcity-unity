@@ -1,0 +1,7 @@
+{
+    "name": "DriftCity.Editor",
+    "rootNamespace": "DriftCity.EditorTools",
+    "references": ["DriftCity.Runtime", "UnityEngine.UI"],
+    "includePlatforms": ["Editor"],
+    "autoReferenced": true
+}

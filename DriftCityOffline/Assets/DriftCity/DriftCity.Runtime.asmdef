@@ -1,0 +1,9 @@
+{
+    "name": "DriftCity.Runtime",
+    "rootNamespace": "DriftCity",
+    "references": ["Unity.InputSystem", "UnityEngine.UI"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": true
+}

@@ -1,0 +1,56 @@
+[
+ {
+  "round": 1,
+  "converted_pct": 42.0,
+  "label": "First map",
+  "added": "Code map built: everything already in the remake counted"
+ },
+ {
+  "round": 2,
+  "converted_pct": 48.3,
+  "label": "Missions and street life",
+  "added": "Delivery service, instant missions, patrols, event effects, pedestrians, trains, convoys"
+ },
+ {
+  "round": 3,
+  "converted_pct": 53.0,
+  "label": "Battle Zone and Undercity",
+  "added": "PvP lobby, wait room, race HUD, results, ladder, tournament; the Undercity stage"
+ },
+ {
+  "round": 4,
+  "converted_pct": 64.1,
+  "label": "Social, events, inventory",
+  "added": "Party, friends, notes, crews; gacha, lotto, coupons, seasonal events; inventory and trade"
+ },
+ {
+  "round": 5,
+  "converted_pct": 71.9,
+  "label": "Party play, chases, shops",
+  "added": "Party Undercity and patrols, Battle Zone extras, Rush Time, V-HUV, Auto-Drive, ADV dealer, Auction House, options, UI states"
+ },
+ {
+  "round": 6,
+  "converted_pct": 81.0,
+  "label": "Quests, channel battles, handlers",
+  "added": "Server-reply audit, step quests and sides, Channel Battles, remaining event screens, ground shadows, the ending"
+ },
+ {
+  "round": 7,
+  "converted_pct": 85.7,
+  "label": "Traffic AI, fuel, replays",
+  "added": "HUV routes and escorts, shared party HUVs, PvP path traffic; NDLG inventory, set parts, periods; Mittron fuel and chargers, driver info, chat modes; ghost battle and replays; quest unlocks and the beginner panel; the apprentice tutorial"
+ },
+ {
+  "round": 8,
+  "converted_pct": 87.5,
+  "label": "Banners, bonuses, tables",
+  "added": "Effect banners wired, golden time / Santa / anniversary bonuses and the badge strip, period prices in the custom shop, Battle Zone AI drivers from aicarparam, streaming fade-in, Real Match looks"
+ },
+ {
+  "round": 9,
+  "converted_pct": 94.2,
+  "label": "The last mile",
+  "added": "HUV pose modes, server chase units, Rush Time and V-HUV online, Undercity towers; assists, PvP multipliers, jump lift, custom marks, second parts row; city ambience, voice lines, word filter, notebook, deletion timer; private channels, rentals, rename, crew stations; mission battles, gate effects, AEROSET, classic options"
+ }
+]
