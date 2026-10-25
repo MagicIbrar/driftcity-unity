@@ -22,6 +22,13 @@ Playable offline on your own or online on a server you host: the open cities (Mo
 and HUV chases, the Battle Zone races and crew Channel Battles, the Undercity, missions and the storyline, the car show
 room, custom shop, parts, inventory, trade and auction, parties, friends, crews and chat, and the seasonal events.
 
+## Download
+
+Ready-to-run builds are on the [Releases page](https://github.com/MagicIbrar/driftcity-unity/releases/latest):
+`DriftCityRebuild-Client-win64.zip` (the Windows player) and `DriftCityRebuild-Server.zip` (the server, for whoever
+hosts). Neither contains game files: put your game folder into a `gameroot.txt` next to the exe (and in the server
+folder) as described below.
+
 ## Point it at your game
 
 You need the installed client: the folder that contains `DriftCity.exe` and `Data` (with `Init.agt`, `World.agt` ...).
@@ -40,8 +47,8 @@ on your machine.
 1. Install **Unity 6000.4.2f1**.
 2. Clone this repository and open `DriftCityOffline` in Unity Hub.
 3. Create `DriftCityOffline/gameroot.txt` containing your game path.
-4. Open `Assets/Scenes/DriftCityGame.unity` and press Play, or build with **Drift City → Build Windows Player**
-   (output in `DriftCityOffline/Build/DriftCityOffline`). Put a `gameroot.txt` next to the built exe as well.
+4. Open `Assets/Scenes/DriftCityGame.unity` and press Play, or build with **Drift City → Build Windows Player (no game data)**
+   (output in `DriftCityOffline/Build/DriftCityPublic`). Put a `gameroot.txt` next to the built exe as well.
 
 ```
 git clone https://github.com/MagicIbrar/driftcity-unity.git
@@ -73,6 +80,11 @@ this rebuild, authoritative for money, rewards and items.
 | `DriftCity_RE` | Reverse-engineering notes with exe addresses, the opcode list and the code map |
 | `DriftCityStaging` | A small .NET harness used while studying formats |
 | `docs` | The project website (GitHub Pages) |
+
+## Credits
+
+- **Team Vanilla** — thank you for your help with this project and the GitHub repository.
+- **TY** — thank you for your help with this project.
 
 ## Contributing
 

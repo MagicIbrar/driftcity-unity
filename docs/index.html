@@ -92,7 +92,7 @@ footer { padding: 36px 0 60px; border-top: 1px solid var(--line); color: var(--m
 <nav><div class="wrap">
   <a class="brand" href="#">Drift City Rebuild</a>
   <a href="#status">Status</a><a href="#features">Features</a><a href="#how">How it works</a>
-  <a href="#setup">Setup</a><a href="#server">Server</a><a href="#game">The game</a><a href="#legal">Legal</a>
+  <a href="#setup">Setup</a><a href="#server">Server</a><a href="#game">The game</a><a href="#credits">Credits</a><a href="#legal">Legal</a>
   <a href="https://github.com/MagicIbrar/driftcity-unity">GitHub</a>
 </div></nav>
 
@@ -106,7 +106,8 @@ footer { padding: 36px 0 60px; border-top: 1px solid var(--line); color: var(--m
   models, textures, sounds, music, interface art, data tables or executable. It reads them from your installation at
   runtime and never modifies them.</div>
   <div class="btns">
-    <a class="btn primary" href="#setup">Set it up</a>
+    <a class="btn primary" href="https://github.com/MagicIbrar/driftcity-unity/releases/latest">Download</a>
+    <a class="btn" href="#setup">Set it up</a>
     <a class="btn" href="https://github.com/MagicIbrar/driftcity-unity">Source on GitHub</a>
     <a class="btn" href="#status">What works</a>
   </div>
@@ -202,13 +203,20 @@ footer { padding: 36px 0 60px; border-top: 1px solid var(--line); color: var(--m
     <li>a file named <code>gameroot.txt</code> next to the player exe (or next to <code>Assets</code> in the editor) holding that path</li>
   </ol>
   <p>It only reads the folder; it never writes to it.</p>
+  <h3>Download and play</h3>
+  <ol class="steps">
+    <li>Get <code>DriftCityRebuild-Client-win64.zip</code> from the
+    <a href="https://github.com/MagicIbrar/driftcity-unity/releases/latest">latest release</a> and unzip it anywhere.</li>
+    <li>Create <code>gameroot.txt</code> next to <code>DriftCityOffline.exe</code> with your game path.</li>
+    <li>Run <code>DriftCityOffline.exe</code>.</li>
+  </ol>
   <h3>Build and run the client</h3>
   <ol class="steps">
     <li>Install <b>Unity 6000.4.2f1</b> (Unity Hub).</li>
     <li>Clone the repository and open <code>DriftCityOffline</code> in Unity.</li>
     <li>Create <code>DriftCityOffline/gameroot.txt</code> with your game path.</li>
     <li>Open <code>Assets/Scenes/DriftCityGame.unity</code> and press Play, or build with
-    <code>Drift City &gt; Build Windows Player</code>. Put a <code>gameroot.txt</code> next to the built
+    <code>Drift City &gt; Build Windows Player (no game data)</code>. Put a <code>gameroot.txt</code> next to the built
     <code>DriftCityOffline.exe</code> too.</li>
   </ol>
   <pre>git clone https://github.com/MagicIbrar/driftcity-unity.git
@@ -219,8 +227,8 @@ echo C:\Games\Drift City&gt; driftcity-unity\DriftCityOffline\gameroot.txt</pre>
   <h2>Host the server</h2>
   <p class="sub">Only needed to play online. The client plays offline without it.</p>
   <ol class="steps">
-    <li>Install <b>Node.js 22</b> or newer.</li>
-    <li>In <code>DriftCityServer</code>: <code>npm install</code>, then put your game path in <code>gameroot.txt</code>
+    <li>Install <b>Node.js 22.5</b> or newer and get <code>DriftCityRebuild-Server.zip</code> from the <a href="https://github.com/MagicIbrar/driftcity-unity/releases/latest">latest release</a> (or use the <code>DriftCityServer</code> folder of the source).</li>
+    <li>In the server folder (from source: run <code>npm install</code> first), put your game path in <code>gameroot.txt</code>
     (or set <code>DRIFTCITY_ROOT</code>).</li>
     <li>Start it with <code>npm start</code> (or <code>start-server.bat</code>). On the first start it reads the tables it
     needs from your game's archives into a local <code>gamedata</code> folder, then listens on TCP port 7860.</li>
@@ -242,7 +250,11 @@ echo C:\Games\Drift City&gt; driftcity-unity\DriftCityOffline\gameroot.txt</pre>
 
 <section id="credits"><div class="wrap">
   <h2>Credits</h2>
-  <p>Thank you to everyone who kept their Drift City client and helped test the rebuild.</p>
+  <div class="grid">
+    <div class="card"><h3>Team Vanilla</h3><p>Thank you for your help with this project and the GitHub repository.</p></div>
+    <div class="card"><h3>TY</h3><p>Thank you for your help with this project.</p></div>
+  </div>
+  <p class="sub" style="margin-top:18px">And thank you to everyone who kept their Drift City client and helped test the rebuild.</p>
 </div></section>
 
 <section id="legal"><div class="wrap">

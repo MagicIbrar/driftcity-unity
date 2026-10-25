@@ -14,6 +14,7 @@ namespace DriftCity.EditorTools
     {
         public const string GameScene = "Assets/Scenes/DriftCityGame.unity";
         public const string BuildDir = "Build/DriftCityOffline";
+        public const string PublicBuildDir = "Build/DriftCityPublic";
 
         [MenuItem("Drift City/Create Game Scene (full game)")]
         public static void CreateGameScene()
@@ -74,7 +75,13 @@ namespace DriftCity.EditorTools
         }
 
         [MenuItem("Drift City/Build Windows Player")]
-        public static void BuildWindows()
+        public static void BuildWindows() => Build(BuildDir, true);
+
+        /// <summary>A player to share: no game data and no gameroot.txt; it reads each player's own install.</summary>
+        [MenuItem("Drift City/Build Windows Player (no game data)")]
+        public static void BuildWindowsPublic() => Build(PublicBuildDir, false);
+
+        static void Build(string dir, bool withGameData)
         {
             CreateGameScene();
             PlayerSettings.productName = "Drift City Offline";
@@ -84,24 +91,24 @@ namespace DriftCity.EditorTools
             PlayerSettings.defaultScreenHeight = 960;
             PlayerSettings.resizableWindow = true;
             PlayerSettings.runInBackground = true;
-            Directory.CreateDirectory(BuildDir);
+            Directory.CreateDirectory(dir);
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
             {
                 scenes = new[] { GameScene },
-                locationPathName = Path.Combine(BuildDir, "DriftCityOffline.exe"),
+                locationPathName = Path.Combine(dir, "DriftCityOffline.exe"),
                 target = BuildTarget.StandaloneWindows64,
                 options = BuildOptions.None,
             });
             var s = report.summary;
             Debug.Log($"Drift City build: {s.result}, {s.totalErrors} errors, {s.totalSize / (1024 * 1024)} MB, {s.totalTime.TotalSeconds:F0}s -> {s.outputPath}");
-            if (s.result == BuildResult.Succeeded)
+            if (s.result == BuildResult.Succeeded && withGameData)
             {
                 var imported = DriftCityImport.ProjectGameData;
-                var gameroot = Path.Combine(BuildDir, "gameroot.txt");
+                var gameroot = Path.Combine(dir, "gameroot.txt");
                 if (File.Exists(Path.Combine(imported, Core.GameFileSystem.ImportMarker)))
                 {
                     // standalone: the imported data ships inside the player, no installation needed
-                    var dest = Path.Combine(BuildDir, "DriftCityOffline_Data", "StreamingAssets", "DriftCityData");
+                    var dest = Path.Combine(dir, "DriftCityOffline_Data", "StreamingAssets", "DriftCityData");
                     int copied = SyncFolder(imported, dest);
                     if (File.Exists(gameroot)) File.Delete(gameroot);
                     Debug.Log($"Drift City build: game data bundled ({copied} files updated) -> {dest}");
@@ -112,7 +119,7 @@ namespace DriftCity.EditorTools
                     if (!string.IsNullOrEmpty(root)) File.WriteAllText(gameroot, root);
                 }
             }
-            else if (Application.isBatchMode) EditorApplication.Exit(1);
+            else if (s.result != BuildResult.Succeeded && Application.isBatchMode) EditorApplication.Exit(1);
         }
     }
 }
